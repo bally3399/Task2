@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AirConditionerTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <module name="javaCode" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="airConditioner.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="airConditioner" />
+    <option name="MAIN_CLASS_NAME" value="airConditioner.AirConditionerTest" />
+    <option name="METHOD_NAME" value="" />
+    <option name="TEST_OBJECT" value="class" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
