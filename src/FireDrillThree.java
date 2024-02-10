@@ -18,6 +18,7 @@ public class FireDrillThree {
             score = new int[index];
             System.out.println(Arrays.toString(score));
         }
+        return score;
     }
 
     public static int[] taskThree(){
@@ -27,6 +28,7 @@ public class FireDrillThree {
             score = new int[index];
             System.out.println(Arrays.toString(score));
         }
+        return score;
     }
     public static int[] taskFour(int[] number) {
         int length = number.length;
@@ -34,13 +36,13 @@ public class FireDrillThree {
         int[] newArray = new int[length1];
         int counter = 0;
         for (int index = 1; index < length; index += 2) {
-            newArray[counter] = array[index];
+            newArray[counter] = number[index];
             counter++;
         }
 
         return newArray;
     }
-}
+
 
 
     public static int[] taskFive(int[] array) {
@@ -60,68 +62,115 @@ public class FireDrillThree {
         return oddNumbers;
     }
 
-    public static void taskSix(taskFour){
+    public static int[] taskSix(int[] array){
 		int sum = 0;
 		int length = array.length;
 		for(int index = 0; index < length; index++){
-			sum += taskFour[index];
+			sum += array[index];
 		}
 		return sum;
 
 	}
 
-    public static void taskSeven(taskFive){
+    public static void taskSeven(int[] array){
 		int sum = 0;
 		int length = array.length;
 		for(int index = 0; index < length; index++){
-			sum += taskFive[index];
+			sum += array[index];
 		}
 		return sum;
 
 	}
-    public int taskEight(taskFour){
-		int length = taskFour.length;
+    public int taskEight(int[] array){
+		int length = array.length;
 		int minimum = 0;
 		for(int index = 0; index < length; index++){
-		    if(minimum > taskFour[index]){
-			    minimum = taskFour[index];
+		    if(minimum > array[index]){
+			    minimum = array[index];
 			}
 	    }
 		return minimum;
     }
-    public int taskNine(taskFive){
-        int length = taskFive.length;
+    public int taskNine(int[] array){
+        int length = array.length;
 		int minimum = 0;
 		for(int index = 0; index < length; index++){
-		    if(minimum > taskFive[index]){
-			    minimum = taskFive[index];
+		    if(minimum > array[index]){
+			    minimum = array[index];
 			}
 	    }
 		return minimum;
     }
 
-     public int taskTen(taskFour){
-		int length = taskFour.length;
+     public int taskTen(int[] array){
+		int length = array.length;
 		int maximum = 0;
 		for(int index = 0; index < length; index++){
-		    if(maximum < taskFour[index]){
-			    maximum = taskFour[index];
+		    if(maximum < array[index]){
+			    maximum = array[index];
 			}
 	    }
 		return maximum;
     }
-    public int taskEleven(taskFive){
-        int length = taskFive.length;
+    public int taskEleven(int[] array){
+        int length = array.length;
 		int maximum = 0;
 		for(int index = 0; index < length; index++){
-		    if(maximum < taskFive[index]){
-			    maximum = taskFive[index];
+		    if(maximum < array[index]){
+			    maximum = array[index];
 			}
 	    }
 		return maximum;
     }
 
 
+    public static int[] taskTwelve(int[] array) {
+        if (array.length % 2 != 0) {
+            int[] newArr = new int[array.length - 1];
+            System.arraycopy(array, 0, newArr, 0, array.length - 1);
+            array = newArr;
+        }
+        for (int index = 0; index < array.length - 1; index += 2) {
+            int temp = array[index];
+            array[index] = array[index + 1];
+            array[index + 1] = temp;
+        }
+
+        return arr;
+    }
+
+    public static int[] taskThirteen(int[] array) {
+        if (array.length % 2 != 0) {
+            int[] newArr = new int[array.length - 1];
+            System.arraycopy(array, 0, newArr, 0, array.length - 1);
+            array = newArr;
+        }
+        for (int index = 0; index < array.length - 1; index += 2) {
+            if (array[index] % 2 == 1 && array[index + 1] % 2 == 1) {
+                int temp = array[index];
+                array[index] = array[index + 1];
+                array[index + 1] = temp;
+            }
+        }
+
+        return array;
+       }
+
+       public static int[] taskFourteen(int[] array) {
+        if (array.length % 2 != 0) {
+            int[] newArr = new int[array.length - 1];
+            System.arraycopy(array, 0, newArr, 0, array.length - 1);
+            array = newArr;
+        }
+        for (int index = 0; index < array.length - 1; index += 2) {
+            if (array[index] % 2 != 1 && array[index + 1] % 2 != 1) {
+                int temp = array[index];
+                array[index] = array[index + 1];
+                array[index + 1] = temp;
+            }
+        }
+
+        return array;
+    }
 
 }*/
-
