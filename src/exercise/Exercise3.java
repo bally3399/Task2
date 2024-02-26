@@ -9,7 +9,7 @@ public class Exercise3 {
         int[] numbers = new int[SIZE];
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter " + SIZE + " numbers.");
+        System.out.println("Enter ten numbers.");
 
         for (int index = 0; index < SIZE; index++) {
             numbers[index] = scanner.nextInt();

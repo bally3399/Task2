@@ -5,19 +5,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class MyListTest {
-    private MyList string;
 
-    @BeforeEach
-    public void MyList() {
-        string = new MyList();
-    }
     @Test
     public void testThatArrayIsEmpty(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
     }
 
     @Test
     public void addNewElementToArrayList_listIsNotEmpty(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("rice");
         assertFalse(string.isEmpty());
@@ -25,6 +22,7 @@ public class MyListTest {
 
     @Test
     public void addAndRemoveElementsInArrayList_listIsEmpty(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("potato");
         assertFalse(string.isEmpty());
@@ -35,6 +33,7 @@ public class MyListTest {
 
     @Test
     public void addTwoElementsAndRemoveOne_listIsNotEmpty(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Orange");
         string.add("Apple");
@@ -44,6 +43,7 @@ public class MyListTest {
     }
     @Test
     public void AddTwoElement_getIndexOfAnElementTest() {
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Orange");
         string.add("Apple");
@@ -55,6 +55,7 @@ public class MyListTest {
 
     @Test
     public void AddTwoElement_getTheElementByIndexTest() {
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Orange");
         string.add("Apple");
@@ -66,6 +67,7 @@ public class MyListTest {
 
     @Test
     public void AddThreeElementAndRemoveSecondElement_thirdElementIsIndex2Test() {
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Orange");
         string.add("Apple");
@@ -78,6 +80,7 @@ public class MyListTest {
 
     @Test
     public void addElement_checkIfTheElementContainTheElementTest(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Apple");
         assertTrue(string.contain("Apple"));
@@ -86,6 +89,7 @@ public class MyListTest {
 
     @Test
     public void addTwoElement_checkIfTheElementContainsTheElementTest(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Apple");
         string.add("banana");
@@ -96,6 +100,7 @@ public class MyListTest {
 
     @Test
     public void testThatListDoesNotContainElement(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("pine-apple");
         assertFalse(string.contain("apple"));
@@ -104,6 +109,7 @@ public class MyListTest {
 
     @Test
     public void getLength_returnTheLengthOfTheListTest(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Orange");
         string.add("Apple");
@@ -112,6 +118,7 @@ public class MyListTest {
 
     @Test
     public void getSize_returnTheLengthOfTheListTest(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Orange");
         string.add("Apple");
@@ -121,9 +128,35 @@ public class MyListTest {
 
     @Test
     public void addElement_listCanCopyElement(){
+        MyList string = new MyList();
         assertTrue(string.isEmpty());
         string.add("Orange");
         assertTrue(string.copy("Orange"));
+    }
+
+    @Test
+    public void addTwoElementsAndRemoveAll_listIsEmpty(){
+        MyList string = new MyList();
+        assertTrue(string.isEmpty());
+        string.add("Orange");
+        string.add("Apple");
+        assertFalse(string.isEmpty());
+
+        MyList string1 = new MyList();
+        string1.add("Orange");
+        string1.add("Apple");
+        assertTrue(string.removeAll(string));
+    }
+
+    @Test
+    public void addTwoElementsAndClear_listIsNotEmpty(){
+        MyList string = new MyList();
+        assertTrue(string.isEmpty());
+        string.add("Orange");
+        string.add("Apple");
+        assertFalse(string.isEmpty());
+        string.clear();
+        assertTrue(string.isEmpty());
     }
 
 }

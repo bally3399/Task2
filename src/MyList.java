@@ -1,21 +1,32 @@
-import java.util.Arrays;
 import java.util.Objects;
 
 public class MyList {
     private int numberOfElement;
+
+    private String element;
     private String[] elements = new String[3];
     public boolean isEmpty() {
         return numberOfElement == 0;
     }
 
     public void add(String element) {
+        if(getSize() == elements.length) createNewArray();
         elements[numberOfElement] = element;
         numberOfElement++;
     }
 
+    private void createNewArray() {
+        String[] newArray = new String[elements.length * 2];
+
+        if(getSize() >= 0) System.arraycopy(elements, 0, newArray, 0, getSize());
+        elements = newArray;
+    }
+
     public void remove(String element) {
-        String[] temp = new String[3];
-        int count = 0;
+        String[] temp;
+        temp = new String[3];
+        int count;
+        count = 0;
         for (String s : elements) {
             if (s != null && s.equals(element)) continue;
             temp[count] = s;
@@ -58,5 +69,18 @@ public class MyList {
             }
         }
             return false;
+    }
+
+    public boolean removeAll(MyList elements2) {
+        boolean condition = false;
+        for(String element : elements2.elements)
+             condition = contain(element);
+        if(condition) remove(element);
+        return true;
+    }
+
+
+    public void clear() {
+        numberOfElement = 0;
     }
 }
