@@ -112,7 +112,7 @@ public class BankApp {
         String amount = input("Enter the amount: ");
         String pin = input("Enter your pin: ");
         try {
-            bank.withdraw(Integer.parseInt(account), Integer.parseInt(account), pin);
+            bank.withdraw(Integer.parseInt(amount), Integer.parseInt(account), pin);
         }catch (Exception e){
             print(e.getMessage());
         }finally {

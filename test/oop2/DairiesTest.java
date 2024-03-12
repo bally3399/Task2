@@ -17,7 +17,7 @@ public class DairiesTest {
     public void findByUserNameTest(){
         Dairies dairies = new Dairies();
         dairies.add("username","password");
-        Dairy foundDairy = dairies.findByUserName("username");
+        Diary foundDairy = dairies.findByUserName("username");
         assertEquals("username", foundDairy.getUsername());
 
     }
@@ -53,8 +53,8 @@ public class DairiesTest {
         dairies.add("username","password");
         dairies.add("username1","password1");
 
-        Dairy foundDairy = dairies.findByUserName("username");
-        Dairy foundDairy1 = dairies.findByUserName("username1");
+        Diary foundDairy = dairies.findByUserName("username");
+        Diary foundDairy1 = dairies.findByUserName("username1");
 
         assertEquals("username", foundDairy.getUsername());
         assertEquals("username1", foundDairy1.getUsername());

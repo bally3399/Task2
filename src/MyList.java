@@ -2,7 +2,6 @@ import java.util.Objects;
 
 public class MyList {
     private int numberOfElement;
-
     private String element;
     private String[] elements = new String[3];
     public boolean isEmpty() {

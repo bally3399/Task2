@@ -29,22 +29,18 @@ public class Account {
     }
 
     public void deposit(int amount) {
-        if (amount > 0) {
-            balance += amount;
-        }else{
-            throw new InvalidAmountException("Amount must be positive.");
-        }
+        if (!(amount > 0))throw new InvalidAmountException("Amount must be positive.");
+        balance += amount;
+
 
     }
 
-    public void withdraw(int amount, String Pin) {
-            if (pin.equals(Pin)) {
-                if (amount > 0 && balance >= amount) {
-                    balance -= amount;
-                } else {
-                    throw new InsufficientFundsException("Insufficient balance");
-                }
-            }
+    public void withdraw(int amount, String pin) {
+        if (!(this.pin.equals(pin))) throw new InvalidPinException("Invalid pin");
+        if (!(amount > 0 && balance >= amount)) throw new InsufficientFundsException("Insufficient balance");
+        balance -= amount;
+
+
     }
     public boolean validatePin(String pin) {
         return !this.pin.equals(pin);

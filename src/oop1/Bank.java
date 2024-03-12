@@ -2,11 +2,11 @@ package oop1;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class Bank {
     private final String name;
     private final List<Account> accounts = new ArrayList<>();
+    private int counter = 100;
 
     public Bank(String name) {
         this.name = name;
@@ -25,11 +25,12 @@ public class Bank {
 
     public Account findAccount(int accountNumber){
         for (Account account:accounts) {
-            if(account.getNumber()== accountNumber){
+            if(account.getNumber()== accountNumber)
                 return account;
-            }
+            
         }
-        throw new AccountNotFoundException("Account not found");
+        return null;
+
     }
 
     public void deposit(int accountNumber, int amount){
@@ -68,9 +69,8 @@ public class Bank {
         account.withdraw(amount, pin);
         receiverAccount.deposit(amount);
     }
-    public int generateAccountNumber(){
-        UUID uuid = UUID.randomUUID();
-        return Math.abs(uuid.hashCode());
+    public int generateAccountNumber() {
+        return counter++;
     }
 
 

@@ -1,11 +1,11 @@
-package oop;
+package oop4;
 
 public class User {
-   private  int age;
-   private final String emailAddress;
-   private final String name;
-   private final String password;
-   private final String phone;
+    private  int age;
+    private final String emailAddress;
+    private final String name;
+    private final String password;
+    private final String phone;
 
     public User(int age, String emailAddress, String name, String password, String phone) {
         this.age = age;
@@ -36,6 +36,4 @@ public class User {
     public String getPhone() {
         return phone;
     }
-
-
 }

@@ -1,12 +1,15 @@
-package oop;
+package oop3;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BillingInformation {
     private String phoneNumber;
     private String receiverName;
-    private String deliveryAddress;
+    private Address deliveryAddress;
     private CardInformation creditCardInfo;
 
-    public BillingInformation(String phoneNumber, String receiverName, String deliveryAddress, CardInformation creditCardInfo) {
+    public BillingInformation(String phoneNumber, String receiverName, Address deliveryAddress, CardInformation creditCardInfo) {
         this.phoneNumber = phoneNumber;
         this.receiverName = receiverName;
         this.deliveryAddress = deliveryAddress;

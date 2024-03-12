@@ -2,7 +2,7 @@ package oop2;
 
 import java.util.Scanner;
 public class MainApp {
-    private static final Dairy dairy = new Dairy("username","correctPin");
+    private static final Diary dairy = new Diary("username","correctPin");
     public static void main(String[] args) {
         display();
     }
@@ -62,6 +62,7 @@ public class MainApp {
         String id = input("Enter your id");
         dairy.findEntry(Integer.parseInt(id));
         print("Entry found for ID: " + id);
+        display();
     }
 
 
@@ -107,6 +108,8 @@ public class MainApp {
         String body = input("Enter  body: ");
         dairy.createEntry(title, body);
         print("Entry created successfully!");
+        print(""+dairy.getEntries());
+        print("Your ID is: "+ dairy.generateIdEntry());
         display();
     }
 
@@ -124,5 +127,13 @@ public class MainApp {
         System.out.println(input);
 
     }
+    /*public static void createDiary(){
+        String username = input("Enter your name");
+        String password = input("Enter your password");
+        user.createDiary(username, password);
+        print("You have create Diary Successfully!!");
+        display();
+    }*/
+
 
 }

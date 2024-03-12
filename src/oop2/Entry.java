@@ -33,4 +33,8 @@ public class Entry {
     public void setBody(String body) {
         this.body = body;
     }
+
+    public String toString(){
+        return String.format("Time: %s\t\nTitle: %s\t\nBody: %s\t", dateCreated, title, body);
+    }
 }

@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dairies {
-    private final List<Dairy> dairies = new ArrayList<>();
+    private final List<Diary> dairies = new ArrayList<>();
 
     public void add(String username, String password) {
-        Dairy newDairy = new Dairy(username, password);
+        Diary newDairy = new Diary(username, password);
         dairies.add(newDairy);
 
     }
 
-    public List<Dairy> getLength() {
+    public List<Diary> getLength() {
         return dairies;
     }
 
-    public Dairy findByUserName(String username) {
-        for (Dairy dairy : dairies) {
+    public Diary findByUserName(String username) {
+        for (Diary dairy : dairies) {
             if (dairy.getUsername().equals(username)) {
                 return dairy;
             }
@@ -27,7 +27,7 @@ public class Dairies {
 
 
     public void remove(String username, String password) {
-        Dairy dairy = findByUserName(username);
+        Diary dairy = findByUserName(username);
         if (dairy != null && dairy.getUsername().equals(username) && dairy.getPassword().equals(password)) {
             dairies.remove(dairy);
         }

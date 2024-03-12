@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DairyTest {
-    private Dairy myDairy;
+    private Diary myDairy;
     @BeforeEach
     public void initializer(){
-        myDairy = new Dairy("name", "correctPin");
+        myDairy = new Diary("name", "correctPin");
     }
     @Test
     public void createEntryTest(){

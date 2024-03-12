@@ -1,14 +1,17 @@
-package oop;
+package oop4;
 
 public class Item {
     private int quantityOfProduct;
     private final Product product;
+    private int price;
 
     public Item(int quantityOfProduct, Product product) {
         this.quantityOfProduct = quantityOfProduct;
         this.product = product;
     }
-    public int getQuantityOfProduct() {
+
+
+    public double getQuantityOfProduct() {
         return quantityOfProduct;
     }
 
@@ -18,6 +21,9 @@ public class Item {
 
     public Product getProduct() {
         return product;
+    }
+    public int getPrice(){
+        return price;
     }
 
 }

@@ -3,14 +3,14 @@ package oop2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Dairy {
+public class Diary {
     private String username;
     private String password;
     public boolean isLocked = true;
     private final List<Entry> entries = new ArrayList<>();
     private int counter = 101;
 
-    public Dairy(String username, String password) {
+    public Diary(String username, String password) {
         this.username = username;
         this.password = password;
     }
