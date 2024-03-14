@@ -58,7 +58,7 @@ public class Bank {
         accounts.remove(account);
     }
 
-    public void transfer(int myNumber, int number, int amount, String pin) {
+    public void transfer(int amount, int myNumber, int number, String pin) {
         Account account = findAccount(myNumber);
         Account receiverAccount = findAccount(number);
 

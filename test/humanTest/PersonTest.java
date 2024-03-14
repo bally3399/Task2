@@ -54,7 +54,7 @@ public class PersonTest {
         Person person = new Person();
         Problem problem = new Problem("Money", Type.FINANCIAL);
         Problem problem1 = new Problem("School fee", Type.EDUCATION);
-        Problem problem2 = new Problem("Start up money", Type.BUSINESS);
+        Problem problem2 = new Problem("Star st up money", Type.BUSINESS);
         person.addProblem(problem);
         person.addProblem(problem1);
         person.addProblem(problem2);

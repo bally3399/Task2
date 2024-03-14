@@ -63,7 +63,7 @@ public class BankApp {
         String pin = input("Enter your pin: ");
         Account newAccount = bank.registerCustomer(firstName, lastName, pin);
         print("Account created successfully!");
-        print("Your account number is:" + bank.generateAccountNumber());
+        print("Your account number is:" + newAccount.getNumber());
         display();
     }
 
@@ -101,6 +101,7 @@ public class BankApp {
         String pin = input("Enter your pin: ");
         try {
             bank.transfer(Integer.parseInt(amount), Integer.parseInt(senderAccount), Integer.parseInt(receiverAccount), pin);
+            print("Transfer successful");
         } catch (Exception e) {
             print(e.getMessage());
         } finally {
@@ -113,6 +114,7 @@ public class BankApp {
         String pin = input("Enter your pin: ");
         try {
             bank.withdraw(Integer.parseInt(amount), Integer.parseInt(account), pin);
+            print("Amount withdrawn successfully");
         }catch (Exception e){
             print(e.getMessage());
         }finally {
@@ -120,10 +122,13 @@ public class BankApp {
         }
     }
     private static void checkBalance() {
+        int balance;
         String accountNumber = input("Enter your account number: ");
         String pin = input("Enter your pin: ");
         try {
-            bank.checkBalance(Integer.parseInt(accountNumber), pin);
+             balance = bank.checkBalance(Integer.parseInt(accountNumber), pin);
+            print("Your balance is: " +"#"+ balance);
+
         }catch(Exception e){
             print(e.getMessage());
         }finally {

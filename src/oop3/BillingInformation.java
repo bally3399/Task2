@@ -1,4 +1,4 @@
-package oop3;
+/*package oop3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,5 +48,5 @@ public class BillingInformation {
     public void setCreditCardInfo(CardInformation creditCardInfo) {
         this.creditCardInfo = creditCardInfo;
     }
-}
+}*/
 

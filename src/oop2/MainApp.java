@@ -1,11 +1,13 @@
 package oop2;
 
 import java.util.Scanner;
+import javax.swing.*;
 public class MainApp {
-    private static final Diary dairy = new Diary("username","correctPin");
+    private static  Diary dairy ;
     public static void main(String[] args) {
         display();
     }
+
     public static void display() {
         String display = """
                 Welcome to My Diary
@@ -17,6 +19,7 @@ public class MainApp {
                 6.Delete Entry
                 7.Update Entry
                 8.Exit App
+                9.Create diary
                 """;
         String choice = input(display);
         switch (choice.charAt(0)) {
@@ -36,6 +39,8 @@ public class MainApp {
                 updateEntry();
             case '8':
                 exitApp();
+            case '9':
+                createDiary();
             default:
                 display();
         }
@@ -52,22 +57,31 @@ public class MainApp {
     }
 
     private static void deleteEntry() {
+        dairy = new Diary("username", "correctPassword");
         String id = input("Enter ID of the entry to delete: ");
         dairy.deleteEntry(Integer.parseInt(id));
         print("Entry deleted successfully");
+        display();
     }
 
 
     private static void findEntry() {
+        dairy = new Diary("username", "correctPassword");
         String id = input("Enter your id");
-        dairy.findEntry(Integer.parseInt(id));
-        print("Entry found for ID: " + id);
-        display();
+        try{
+           Entry entry = dairy.findEntry(Integer.parseInt(id));
+            print("Entry found for ID\n" + entry.toString());
+        }catch (RuntimeException e){
+            print(e.getMessage());
+        }finally {
+            display();
+        }
     }
 
 
     private static void checkIfDiaryIsLocked() {
         String password = input("Enter your password");
+        dairy = new Diary("username", password);
         if(password.equals(dairy.getPassword())) {
             if (dairy.isLocked()){
                 print("Dairy is locked");
@@ -82,6 +96,7 @@ public class MainApp {
 
     private static void lock() {
         String password = input("Enter your password");
+        dairy = new Diary("username", password);
         if(password.equals(dairy.getPassword())) {
             dairy.lock();
             print("You have successfully lock dairy");
@@ -93,6 +108,7 @@ public class MainApp {
 
     private static void unlock() {
         String password = input("Enter your password");
+        dairy = new Diary("username", password);
         if (password.equals(dairy.getPassword())) {
             dairy.unLocked(password);
             print("You have successfully unlock dairy");
@@ -104,13 +120,18 @@ public class MainApp {
     }
 
     private static void createEntry() {
+        dairy = new Diary("username", "correctPassword");
         String title = input("Enter title: ");
         String body = input("Enter  body: ");
-        dairy.createEntry(title, body);
-        print("Entry created successfully!");
-        print(""+dairy.getEntries());
-        print("Your ID is: "+ dairy.generateIdEntry());
-        display();
+        try{
+            Entry entry = dairy.createEntry(title, body);
+            print("Entry created successfully!");
+            print("Your ID is: "+ entry.getId());
+        }catch (RuntimeException e){
+            print(e.getMessage());
+        }finally {
+            display();
+        }
     }
 
     private static void exitApp () {
@@ -119,21 +140,26 @@ public class MainApp {
 
     private static String input(String display) {
         print(display);
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return JOptionPane.showInputDialog(null, display);
     }
 
     private static void print(String input){
-        System.out.println(input);
+        JOptionPane.showMessageDialog(null, input);
 
     }
-    /*public static void createDiary(){
+    public static void createDiary(){
         String username = input("Enter your name");
         String password = input("Enter your password");
-        user.createDiary(username, password);
-        print("You have create Diary Successfully!!");
-        display();
-    }*/
+        try {
+            dairy = new Diary(username, password);
+            dairy.createDiary(username, password);
+            print("You have create Diary Successfully!!");
+        }catch (RuntimeException e){
+            print(e.getMessage());
+        }finally {
+            display();
+        }
+    }
 
 
 }

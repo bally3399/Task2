@@ -8,6 +8,7 @@ public class Diary {
     private String password;
     public boolean isLocked = true;
     private final List<Entry> entries = new ArrayList<>();
+    private final List<Diary> diaries = new ArrayList<>();
     private int counter = 101;
 
     public Diary(String username, String password) {
@@ -49,11 +50,9 @@ public class Diary {
 
     public Entry findEntry(int id) {
         for (Entry entry : entries) {
-            if (entry.getId() == id) {
-                return entry;
-            }
+            if (entry.getId() == id) return entry;
         }
-        return null;
+        throw new RuntimeException("You have to create entry");
     }
 
     public int generateIdEntry() {
@@ -74,5 +73,11 @@ public class Diary {
                 entry.setBody(body);
             }
         }
+    }
+
+    public Diary createDiary(String username, String password) {
+        Diary diary = new Diary(username, password);
+        diaries.add(diary);
+        return diary;
     }
 }

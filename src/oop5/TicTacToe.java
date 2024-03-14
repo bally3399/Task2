@@ -23,15 +23,14 @@ public class TicTacToe {
         displayBoard(board);
         getMove(scanner, board, player);
         if (checkWin(board, player)) {
+            displayBoard(board);
             System.out.println(player.getName() + " wins!");
             return true;
 
         }
-        //if (board.isFull()) {
-        //  System.out.println("Board is full");
-        //return true;
-        //}
+
         if (checkDraw(board)) {
+            displayBoard(board);
             System.out.println("It's a draw!");
             return true;
         }
