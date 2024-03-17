@@ -1,18 +1,15 @@
-/*package oop3;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class Estore {
-    private final List<Customer> customers = new ArrayList<>();
-    private final List<Seller> sellers = new ArrayList<>();
-    private final List<Admin> admin = new ArrayList<>();
-
-    public void add(Seller seller) {
-        sellers.add(seller);
-    }
-
-    public int size() {
-        return;
-    }
-}*/
+//package oop3;
+//
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Estore {
+//    private final List<Customer> customers = new ArrayList<>();
+//    private final List<Seller> sellers = new ArrayList<>();
+//    private final List<Admin> admin = new ArrayList<>();
+//
+//    public void add(Seller seller) {
+//        sellers.add(seller);
+//    }
+//
+//}

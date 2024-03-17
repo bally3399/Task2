@@ -1,6 +1,9 @@
 public class SevenSegment {
     private String[] segments = new String[8];
     public  void splittingIntoArray(String binary) {
+        if (binary.length() != 8) {
+            throw new IllegalArgumentException("Binary input should be 8 characters long");
+        }
         for (int index = 0; index < segments.length; index++) {
             if (binary.charAt(index) != '0'  && binary.charAt(index) != '1') throw new IllegalArgumentException("invalid binary");
             segments[index] = "" + binary.charAt(index);
@@ -11,9 +14,6 @@ public class SevenSegment {
     }
 
     public void displaySeven() {
-        if (segments.length > 8){
-            throw new IllegalArgumentException("Bimbim");
-        }
         try {
             display1(segments[0]);
             display1(segments[5], segments[1]);

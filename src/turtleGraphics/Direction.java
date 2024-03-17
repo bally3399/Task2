@@ -2,8 +2,8 @@ package turtleGraphics;
 
 public enum Direction {
     WEST("SOUTH", "NORTH"),
-    SOUTH("WEST", "EAST"),
-    NORTH("EAST","WEST"),
+    SOUTH("EAST", "WEST"),
+    NORTH("WEST","EAST"),
     EAST("NORTH", "SOUTH");
     private String right;
     private String left;
@@ -11,7 +11,7 @@ public enum Direction {
         this.left = left;
         this.right = right;
     }
-    public Direction turnLeft(){
+    public  Direction turnLeft(){
         return Direction.valueOf(this.left);
     }
     public Direction turnRight(){

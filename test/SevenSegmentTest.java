@@ -61,9 +61,10 @@ public class SevenSegmentTest {
         assertThrows(IllegalArgumentException.class, () -> sevenSegment.splittingIntoArray("123310101"));
     }
 
-    //@Test
-    //public void testInvalidInput1(){
-      //  assertThrows(IllegalArgumentException.class, () -> sevenSegment.splittingIntoArray("100110101"));
+    @Test
+    public void testInvalidInput1(){
+        SevenSegment sevenSegment = new SevenSegment();
+        assertThrows(IllegalArgumentException.class, () -> sevenSegment.splittingIntoArray("100110101"));
+    }
 
-    //}
 }
