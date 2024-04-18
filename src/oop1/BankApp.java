@@ -1,6 +1,7 @@
 package oop1;
 
 import java.util.Scanner;
+import javax.swing.*;
 
 public class BankApp {
     private static final Bank bank = new Bank("firstBank");
@@ -85,11 +86,10 @@ public class BankApp {
 
     private static String input(String display) {
         print(display);
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        return JOptionPane.showInputDialog(null, display);
     }
     private static void print(String input){
-        System.out.println(input);
+        JOptionPane.showMessageDialog(null, input);
 
     }
 
