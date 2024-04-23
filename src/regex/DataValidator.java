@@ -9,6 +9,7 @@ public class DataValidator {
     }
 
     public static boolean isEmailNumberValid(String emailAddress) {
+        emailAddress = emailAddress.toLowerCase();
         String regex = "([a-z]\\.)?[a-z]+@(enum|semicolon|learnspace|native.semicolom).africa";
         return emailAddress.matches(regex);
     }
