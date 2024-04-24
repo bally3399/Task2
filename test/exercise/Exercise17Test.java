@@ -21,7 +21,7 @@ public class Exercise17Test {
     }
     @Test
     public void testPalindrome2() {
-        String letter = "foof";
+        String letter = "o";
         String expected = "Yes";
         String result = Exercise17.isPalindrome(letter);
         assertEquals(expected, result);

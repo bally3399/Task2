@@ -1,4 +1,6 @@
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Task6 {
     public static String reverseString(String word) {
@@ -37,5 +39,31 @@ public class Task6 {
         }
         list.add(str);
         return list.toArray(new String[0]);
+    }
+
+    public static int[] sort(int[] array) {
+        int[] temp = new int[array.length];
+        for (int index = 0; index < array.length; index++) {
+            for (int idx = index + 1; idx < array.length ; idx++) {
+                temp[index] = array[index];
+                array[index] = array[idx];
+                array[idx] = temp[index];
+            }
+        }
+        return temp;
+    }
+
+    public static int[] position(int[] array) {
+        int[] position = new int[array.length];
+        int[] temp = Arrays.copyOf(array, array.length);
+        int[] sorted = sort(array);
+        for (int index = 0; index < temp.length; index++) {
+            for (int input = 0; input < temp.length; input++) {
+                if (temp[index] == sorted[input]) {
+                    position[index] = input + 1;
+                }
+            }
+        }
+        return position;
     }
 }
