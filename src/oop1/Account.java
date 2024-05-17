@@ -9,6 +9,7 @@ public class Account {
     public Account(String name, String pin, int number) {
         this.name = name;
         this.pin = pin;
+
         this.number = number;
     }
 
