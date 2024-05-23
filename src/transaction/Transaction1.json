@@ -4,12 +4,12 @@
     "name": "John Doe",
     "amount": "2000",
     "type": "DEBIT",
-    "date": "2024-05-13"
+    "date": "2024-05-01"
   },
 
   {
     "id": 2,
-    "name": "Jane Doe",
+    "name": "John Doe",
     "amount": "2000",
     "type": "DEBIT",
     "date": "2024-05-13"
@@ -17,6 +17,23 @@
 
   {
     "id": 3,
+    "name": "Jane Doe",
+    "amount": "2000",
+    "type": "DEBIT",
+    "date": "2024-05-13"
+  },
+
+
+  {
+    "id": 4,
+    "name": "Jane Doe",
+    "amount": "2000",
+    "type": "DEBIT",
+    "date": "2024-05-12"
+  },
+
+  {
+    "id": 5,
     "name": "Johnson Doe",
     "amount": "2000",
     "type": "DEBIT",
