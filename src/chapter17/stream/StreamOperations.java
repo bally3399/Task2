@@ -3,7 +3,6 @@ package chapter17.stream;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import static java.util.stream.Collectors.toMap;
 
 public class StreamOperations {
@@ -17,6 +16,7 @@ public class StreamOperations {
         return codePoint.stream()
                 .collect(toMap((number) ->number, Character:: toString));
     }
+
     public static Map<Integer, String> mapCodePointToCharacter1(List<Integer> codePoint) {
         return codePoint.stream()
                 .collect(toMap((number) ->number, Character:: toString, (a, b) -> a));

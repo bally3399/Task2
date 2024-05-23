@@ -27,6 +27,7 @@ public class Transaction {
                 ", date='" + date + '\'' +
                 '}';
     }
+
     public Transaction(String id, String name, BigDecimal amount, Type type, LocalDate date) {
         this.id = id;
         this.name = name;
@@ -78,3 +79,4 @@ public class Transaction {
     }
 
 }
+

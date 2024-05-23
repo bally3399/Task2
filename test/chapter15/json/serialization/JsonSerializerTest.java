@@ -2,9 +2,7 @@ package chapter15.json.serialization;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
-
 import static chapter15.json.serialization.Sex.*;
 import static org.junit.jupiter.api.Assertions.*;
 
